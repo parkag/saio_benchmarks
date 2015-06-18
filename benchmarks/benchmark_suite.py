@@ -32,7 +32,7 @@ def test_star_query_cartesian(name, arms):
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -41,8 +41,9 @@ def test_star_query_cartesian(name, arms):
         name+".saio.out",
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
+
 
 def test_star_query_join(name, arms):
     setup_query = star.get_schema_query(arms)
@@ -59,7 +60,7 @@ def test_star_query_join(name, arms):
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -68,7 +69,7 @@ def test_star_query_join(name, arms):
         name+".saio.out",
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
 
 
@@ -85,7 +86,7 @@ def test_moderate_query():
         "moderate_query.geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -94,19 +95,15 @@ def test_moderate_query():
         "moderate_query.saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
-
-
-def test_another_moderate_query():
-    pass
 
 
 def test_complex_query():
     # this is not so complex, the other one is complex
-    setup_query = file('schemas/dump.sql').read()
+    setup_query = file('../schemas/dump.sql').read()
     setup_query = None
-    query = file('queries/robert.sql').read()
+    query = file('../queries/robert.sql').read()
 
     run_tests(
         geqo_default_params_effort,
@@ -115,7 +112,7 @@ def test_complex_query():
         "complex_query.geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -124,16 +121,8 @@ def test_complex_query():
         "complex_query.saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )    
-
-
-def test_another_complex_query():
-    pass
-
-
-def test_facebook_query():
-    pass
 
 
 def test_random_query(name, ntables, joins, left_joins, right_joins):    
@@ -155,7 +144,7 @@ def test_random_query(name, ntables, joins, left_joins, right_joins):
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -164,8 +153,9 @@ def test_random_query(name, ntables, joins, left_joins, right_joins):
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
+
 
 def test_random_query_datatypes(name, ntables, joins, left_joins, right_joins):
     from dynamic_schemas.data_generator import standard_datatypes
@@ -191,7 +181,7 @@ def test_random_query_datatypes(name, ntables, joins, left_joins, right_joins):
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -200,7 +190,7 @@ def test_random_query_datatypes(name, ntables, joins, left_joins, right_joins):
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
 
 def test_random_indexed_query(
@@ -227,7 +217,7 @@ def test_random_indexed_query(
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -236,7 +226,7 @@ def test_random_indexed_query(
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
 
 def test_random_nested_query(
@@ -262,7 +252,7 @@ def test_random_nested_query(
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -271,8 +261,9 @@ def test_random_nested_query(
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )   
+
 
 def test_random_complicated_query(
         name, ntables, joins, left_joins, right_joins, indexes):
@@ -298,7 +289,7 @@ def test_random_complicated_query(
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -307,8 +298,9 @@ def test_random_complicated_query(
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
+
 
 def test_random_nested_improved_query(
         name, ntables, joins, left_joins, right_joins, indexes):
@@ -334,7 +326,7 @@ def test_random_nested_improved_query(
         name+".geqo.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=False
+        optimizer="GEQO"
     )
     run_tests(
         saio_params,
@@ -343,24 +335,62 @@ def test_random_nested_improved_query(
         name+".saio.out", 
         LOOPS,
         TIMEOUT,
-        use_saio=True
+        optimizer="SAIO"
     )
 
 
-def main():
-    """test_star_query_cartesian('star_query_30_arms', arms=30)
+def test_double_nested_query(name):
+
+    s = RandomSchema(30, 10, datatypes=['text'])
+    s.generate_tables(min_cols=3, max_cols=4)
+    s.generate_indexes()
+    q = RandomDoubleNestedQuery()
+
+    setup_query = s.sql()
+    print setup_query
+    query = q.explain_sql()
+    print query
+
+    log_object(name+".schema", setup_query)
+    log_object(name+".query", query)
+
+    run_tests(
+        geqo_default_params_effort,
+        setup_query,
+        query,
+        name+".geqo.out", 
+        LOOPS,
+        TIMEOUT,
+        optimizer="GEQO"
+    )
+    run_tests(
+        saio_params,
+        setup_query,
+        query,
+        name+".saio.out", 
+        LOOPS,
+        TIMEOUT,
+        optimizer="SAIO"
+    )
+
+
+def test_star():
+    test_star_query_cartesian('star_query_30_arms', arms=30)
     test_star_query_cartesian('star_query_50_arms', arms=50)
     test_star_query_cartesian('star_query_80_arms', arms=80)
     test_star_query_cartesian('star_query_100_arms', arms=100)
 
-    
     test_star_query_join('star_query_join_30_arms', arms=30)
     test_star_query_join('star_query_join_50_arms', arms=50)
     test_star_query_join('star_query_join_80_arms', arms=80)
 
-    test_moderate_query()# this is complex actually
-    #test_complex_query()"""
 
+def test_provided_queries():
+    #test_moderate_query()# this is complex actually
+    test_complex_query() # this is not so complex
+
+
+def test_flat_queries():
     """
     test_random_query_datatypes('random_query_datatypes_20_joins', 30, 20, 0, 0)
     test_random_query_datatypes('random_query_datatypes_30_joins', 40, 30, 0, 0)
@@ -368,8 +398,7 @@ def main():
     test_random_query_datatypes('random_query_datatypes_80_joins', 90, 80, 0, 0)
     test_random_query_datatypes('random_query_datatypes_80_left_joins', 90, 0, 80, 0)
     test_random_query_datatypes('random_query_datatypes_80_right_joins', 90, 0, 0, 80)
-    """
-    """
+
     test_random_query('random_query_15_joins_no_constraints', 20, 15, 0, 0)
     test_random_query('random_query_15_left_joins_no_constraints', 20, 0, 15, 0)
     test_random_query('random_query_15_right_joins_no_constraints', 20, 0, 0, 15)
@@ -391,7 +420,7 @@ def main():
     test_random_query('random_query_20_joins_15_left_15_right', 55, 20, 15, 15)
 
     test_random_query('random_query_70_joins_no_constraints', 75, 70, 0, 0)
-    test_random_query('random_query_70_left_joins_no_constraints', 75, 0, 70, 0)
+    test_random_query('random_query_70_left_joins_no_constraints', 75, 0, 70, 0)"""
     test_random_query('random_query_70_right_joins_no_constraints', 75, 0, 0, 70)
     test_random_query('random_query_30_joins_20_left_20_right', 75, 30, 20, 20)
 
@@ -403,8 +432,7 @@ def main():
     test_random_query('random_query_130_joins_no_constraints', 135, 130, 0, 0)
     test_random_query('random_query_130_left_joins_no_constraints', 135, 0, 130, 0)
     test_random_query('random_query_130_right_joins_no_constraints', 135, 0, 0, 130)
-    test_random_query('random_query_50_joins_40_left_40_right', 135, 50, 40, 40)"""
-
+    test_random_query('random_query_50_joins_40_left_40_right', 135, 50, 40, 40)
     """
     test_random_indexed_query(
       'random_query_15_joins_5_indexes', 30, 15, 0, 0, 5)
@@ -417,9 +445,11 @@ def main():
     test_random_indexed_query(
         'random_query_20_joins_15_left_15_right', 85, 20, 15, 15, 25)
     """
-    """test_random_nested_query(
+
+def test_nested_queries():
+    test_random_nested_query(
         'random_nested_query_10_joins_10_left_10_right', 40, 10, 10, 10, 15, 1)
-    """
+    
     test_random_nested_query(
         'random_nested_query_20_joins_15_left_15_right_to_atri2', 65, 20, 15, 15, 15, 1)
     
@@ -437,6 +467,17 @@ def main():
 
     test_random_complicated_query(
         'random_complicated_query_20_joins_5_left_5_right', 45, 20, 5, 5, 15)
+
+    test_double_nested_query('double_nested_query')
+
+
+def main():
+    #test_star()
+    #test_provided_queries()
+    test_flat_queries()
+    
+    # test_nested_queries()
+
 
 if __name__ == "__main__":
     main()

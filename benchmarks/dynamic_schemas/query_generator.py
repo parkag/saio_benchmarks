@@ -263,3 +263,45 @@ class NestedQueryImproved(RandomQuery):
     def explain_sql(self):
         sql = """EXPLAIN (FORMAT JSON) \n""" + self.sql() + ";"
         return sql 
+
+
+class RandomDoubleNestedQuery(object):
+
+    def sql(self):
+        sql = """SELECT * FROM table_1
+        JOIN table_2 ON table_1.col_1 = table_2.col_1
+        LEFT JOIN table_3 ON table_3.col_2 = table_2.col_2
+        RIGHT JOIN table_4 ON table_4.col_1 = table_3.col_1
+        RIGHT JOIN (
+            SELECT * FROM table_5
+                RIGHT JOIN table_6 ON table_6.col_1 = table_5.col_1
+                JOIN (
+                    SELECT * FROM table_7
+                        JOIN table_8 ON table_8.col_2 = table_7.col_2
+                        RIGHT JOIN table_9 ON table_9.col_1 = table_8.col_2
+                        JOIN table_10 ON table_10.col_2 = table_9.col_2
+                        RIGHT JOIN table_11 ON table_11.col_1 = table_7.col_1
+                ) AS subsubquery_1 ON TRUE
+        ) AS subquery_1 ON TRUE
+        RIGHT JOIN (
+            SELECT * FROM table_12
+                RIGHT JOIN table_13 ON table_13.col_1 = table_12.col_1
+                RIGHT JOIN table_14 ON table_14.col_2 = table_13.col_1
+                RIGHT JOIN (
+                    SELECT * FROM table_15
+                        RIGHT JOIN table_16 ON table_16.col_2 = table_15.col_1
+                        LEFT JOIN table_17 ON table_17.col_1 = table_15.col_1
+                        RIGHT JOIN table_18 ON table_18.col_2 = table_15.col_2
+                        RIGHT JOIN table_19 ON table_19.col_1 = table_18.col_1
+                ) AS subsubquery_2 ON TRUE
+                RIGHT JOIN table_20 ON table_20.col_1 = table_14.col_1
+                RIGHT JOIN table_21 ON table_21.col_2 = table_20.col_2
+        ) AS subquery_2 ON TRUE
+        RIGHT JOIN table_22 ON table_22.col_1 = table_1.col_1
+        LEFT JOIN table_23 ON table_23.col_2 = table_22.col_1
+        """
+        return sql
+
+    def explain_sql(self):
+        sql = """EXPLAIN (FORMAT JSON) \n""" + self.sql() + ";"
+        return sql
