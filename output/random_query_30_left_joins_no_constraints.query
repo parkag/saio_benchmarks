@@ -1,0 +1,33 @@
+ANALYZE;
+        EXPLAIN (FORMAT JSON)SELECT * FROM  table_0  LEFT JOIN table_22 ON table_0.col_8 = table_22.col_1
+ LEFT JOIN table_11 ON table_0.col_4 = table_11.col_2
+ LEFT JOIN table_25 ON table_11.col_5 = table_25.col_7
+ LEFT JOIN table_19 ON table_11.col_4 = table_19.col_1
+ LEFT JOIN table_17 ON table_0.col_10 = table_17.col_3
+ LEFT JOIN table_21 ON table_19.col_2 = table_21.col_4
+ LEFT JOIN table_20 ON table_19.col_0 = table_20.col_4
+ LEFT JOIN table_28 ON table_22.col_1 = table_28.col_1
+ LEFT JOIN table_29 ON table_0.col_2 = table_29.col_0
+ LEFT JOIN table_33 ON table_22.col_0 = table_33.col_1
+ LEFT JOIN table_10 ON table_21.col_8 = table_10.col_0
+ LEFT JOIN table_1 ON table_11.col_6 = table_1.col_0
+ LEFT JOIN table_8 ON table_19.col_2 = table_8.col_1
+ LEFT JOIN table_15 ON table_10.col_0 = table_15.col_8
+ LEFT JOIN table_32 ON table_15.col_5 = table_32.col_3
+ LEFT JOIN table_30 ON table_1.col_1 = table_30.col_1
+ LEFT JOIN table_34 ON table_1.col_1 = table_34.col_0
+ LEFT JOIN table_12 ON table_17.col_10 = table_12.col_3
+ LEFT JOIN table_2 ON table_19.col_2 = table_2.col_5
+ LEFT JOIN table_18 ON table_30.col_3 = table_18.col_2
+ LEFT JOIN table_26 ON table_0.col_4 = table_26.col_9
+ LEFT JOIN table_31 ON table_19.col_3 = table_31.col_7
+ LEFT JOIN table_5 ON table_11.col_7 = table_5.col_2
+ LEFT JOIN table_23 ON table_2.col_2 = table_23.col_2
+ LEFT JOIN table_16 ON table_28.col_0 = table_16.col_2
+ LEFT JOIN table_9 ON table_2.col_2 = table_9.col_3
+ LEFT JOIN table_13 ON table_29.col_7 = table_13.col_2
+ LEFT JOIN table_4 ON table_1.col_0 = table_4.col_4
+ LEFT JOIN table_27 ON table_26.col_9 = table_27.col_9
+ LEFT JOIN table_24 ON table_4.col_9 = table_24.col_3
+
+        ;

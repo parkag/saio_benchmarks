@@ -1,0 +1,23 @@
+EXPLAIN (FORMAT JSON) 
+SELECT * FROM  table_0  JOIN table_2 ON table_0.col_1 = table_2.col_0
+ JOIN table_32 ON table_2.col_0 = table_32.col_0
+ JOIN table_24 ON table_0.col_0 = table_24.col_0
+ JOIN table_17 ON table_0.col_1 = table_17.col_0
+ JOIN table_28 ON table_0.col_0 = table_28.col_1
+ JOIN table_15 ON table_17.col_0 = table_15.col_2
+ JOIN table_14 ON table_0.col_0 = table_14.col_1
+ JOIN table_25 ON table_17.col_0 = table_25.col_0
+ JOIN table_10 ON table_0.col_1 = table_10.col_0
+ JOIN table_19 ON table_17.col_1 = table_19.col_0
+ JOIN table_13 ON table_17.col_1 = table_13.col_2
+ JOIN table_9 ON table_2.col_0 = table_9.col_2
+ JOIN table_21 ON table_14.col_2 = table_21.col_1
+ JOIN table_18 ON table_19.col_1 = table_18.col_0
+ JOIN table_33 ON table_13.col_2 = table_33.col_2
+ JOIN table_8 ON table_13.col_0 = table_8.col_0
+ JOIN table_12 ON table_9.col_2 = table_12.col_2
+ JOIN table_30 ON table_0.col_1 = table_30.col_1
+ JOIN table_26 ON table_21.col_0 = table_26.col_0
+ JOIN table_7 ON table_0.col_1 = table_7.col_0
+
+        ;

@@ -1,0 +1,33 @@
+EXPLAIN (FORMAT JSON) 
+SELECT * FROM  table_0  JOIN table_28 ON table_0.col_1 = table_28.col_0
+ JOIN table_20 ON table_28.col_1 = table_20.col_2
+ JOIN table_7 ON table_28.col_1 = table_7.col_0
+ JOIN table_42 ON table_7.col_2 = table_42.col_1
+ JOIN table_21 ON table_42.col_1 = table_21.col_0
+ JOIN table_6 ON table_28.col_1 = table_6.col_0
+ JOIN table_16 ON table_7.col_1 = table_16.col_0
+ JOIN table_44 ON table_16.col_0 = table_44.col_0
+ JOIN table_36 ON table_7.col_0 = table_36.col_1
+ JOIN table_29 ON table_16.col_0 = table_29.col_0
+ JOIN table_37 ON table_42.col_0 = table_37.col_0
+ JOIN table_4 ON table_16.col_0 = table_4.col_0
+ JOIN table_17 ON table_44.col_0 = table_17.col_0
+ JOIN table_43 ON table_20.col_0 = table_43.col_2
+ JOIN table_24 ON table_36.col_0 = table_24.col_0
+ JOIN table_5 ON table_42.col_2 = table_5.col_2
+ JOIN table_33 ON table_0.col_1 = table_33.col_0
+ JOIN table_3 ON table_0.col_0 = table_3.col_0
+ JOIN table_9 ON table_7.col_0 = table_9.col_0
+ JOIN table_1 ON table_9.col_0 = table_1.col_1
+ JOIN table_14 ON table_4.col_0 = table_14.col_1
+ JOIN table_38 ON table_1.col_1 = table_38.col_1
+ JOIN table_35 ON table_24.col_0 = table_35.col_1
+ JOIN table_8 ON table_5.col_2 = table_8.col_0
+ JOIN table_34 ON table_1.col_0 = table_34.col_0
+ JOIN table_41 ON table_8.col_0 = table_41.col_1
+ JOIN table_27 ON table_14.col_1 = table_27.col_0
+ JOIN table_11 ON table_41.col_1 = table_11.col_2
+ JOIN table_12 ON table_29.col_0 = table_12.col_2
+ JOIN table_19 ON table_1.col_0 = table_19.col_1
+
+        ;

@@ -1,0 +1,434 @@
+--
+DROP SCHEMA IF EXISTS test_view CASCADE;
+
+            CREATE SCHEMA test_view;
+
+            SET SEARCH_PATH = test_view, test_data;
+DROP TABLE IF EXISTS table_0;
+CREATE TABLE table_0(
+                col_0 text,
+col_1 int,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_1;
+CREATE TABLE table_1(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_2;
+CREATE TABLE table_2(
+                col_0 text,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_3;
+CREATE TABLE table_3(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_4;
+CREATE TABLE table_4(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_5;
+CREATE TABLE table_5(
+                col_0 float,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_6;
+CREATE TABLE table_6(
+                col_0 int,
+col_1 float,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_7;
+CREATE TABLE table_7(
+                col_0 float,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_8;
+CREATE TABLE table_8(
+                col_0 text,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_9;
+CREATE TABLE table_9(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_10;
+CREATE TABLE table_10(
+                col_0 text,
+col_1 float,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_11;
+CREATE TABLE table_11(
+                col_0 int,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_12;
+CREATE TABLE table_12(
+                col_0 text,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_13;
+CREATE TABLE table_13(
+                col_0 text,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_14;
+CREATE TABLE table_14(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_15;
+CREATE TABLE table_15(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_16;
+CREATE TABLE table_16(
+                col_0 text,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_17;
+CREATE TABLE table_17(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_18;
+CREATE TABLE table_18(
+                col_0 float,
+col_1 text,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_19;
+CREATE TABLE table_19(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_20;
+CREATE TABLE table_20(
+                col_0 int,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_21;
+CREATE TABLE table_21(
+                col_0 int,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_22;
+CREATE TABLE table_22(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_23;
+CREATE TABLE table_23(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_24;
+CREATE TABLE table_24(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_25;
+CREATE TABLE table_25(
+                col_0 text,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_26;
+CREATE TABLE table_26(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_27;
+CREATE TABLE table_27(
+                col_0 int,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_28;
+CREATE TABLE table_28(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_29;
+CREATE TABLE table_29(
+                col_0 int,
+col_1 text,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_30;
+CREATE TABLE table_30(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_31;
+CREATE TABLE table_31(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_32;
+CREATE TABLE table_32(
+                col_0 float,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_33;
+CREATE TABLE table_33(
+                col_0 text,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_34;
+CREATE TABLE table_34(
+                col_0 text,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_35;
+CREATE TABLE table_35(
+                col_0 text,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_36;
+CREATE TABLE table_36(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_37;
+CREATE TABLE table_37(
+                col_0 float,
+col_1 text,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_38;
+CREATE TABLE table_38(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_39;
+CREATE TABLE table_39(
+                col_0 int,
+col_1 int,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_40;
+CREATE TABLE table_40(
+                col_0 int,
+col_1 int,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_41;
+CREATE TABLE table_41(
+                col_0 text,
+col_1 text,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_42;
+CREATE TABLE table_42(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_43;
+CREATE TABLE table_43(
+                col_0 int,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_44;
+CREATE TABLE table_44(
+                col_0 int,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_45;
+CREATE TABLE table_45(
+                col_0 float,
+col_1 int,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_46;
+CREATE TABLE table_46(
+                col_0 float,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_47;
+CREATE TABLE table_47(
+                col_0 int,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_48;
+CREATE TABLE table_48(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_49;
+CREATE TABLE table_49(
+                col_0 text,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_50;
+CREATE TABLE table_50(
+                col_0 text,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_51;
+CREATE TABLE table_51(
+                col_0 float,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_52;
+CREATE TABLE table_52(
+                col_0 float,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_53;
+CREATE TABLE table_53(
+                col_0 text,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_54;
+CREATE TABLE table_54(
+                col_0 float,
+col_1 text,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_55;
+CREATE TABLE table_55(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_56;
+CREATE TABLE table_56(
+                col_0 int,
+col_1 int,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_57;
+CREATE TABLE table_57(
+                col_0 text,
+col_1 float,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_58;
+CREATE TABLE table_58(
+                col_0 float,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_59;
+CREATE TABLE table_59(
+                col_0 text,
+col_1 int,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_60;
+CREATE TABLE table_60(
+                col_0 text,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_61;
+CREATE TABLE table_61(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_62;
+CREATE TABLE table_62(
+                col_0 int,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_63;
+CREATE TABLE table_63(
+                col_0 int,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_64;
+CREATE TABLE table_64(
+                col_0 text,
+col_1 int,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_65;
+CREATE TABLE table_65(
+                col_0 float,
+col_1 float
+            );
+        DROP TABLE IF EXISTS table_66;
+CREATE TABLE table_66(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_67;
+CREATE TABLE table_67(
+                col_0 int,
+col_1 int,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_68;
+CREATE TABLE table_68(
+                col_0 text,
+col_1 float,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_69;
+CREATE TABLE table_69(
+                col_0 text,
+col_1 float,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_70;
+CREATE TABLE table_70(
+                col_0 float
+            );
+        DROP TABLE IF EXISTS table_71;
+CREATE TABLE table_71(
+                col_0 text,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_72;
+CREATE TABLE table_72(
+                col_0 float,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_73;
+CREATE TABLE table_73(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_74;
+CREATE TABLE table_74(
+                col_0 text
+            );
+        DROP TABLE IF EXISTS table_75;
+CREATE TABLE table_75(
+                col_0 text,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_76;
+CREATE TABLE table_76(
+                col_0 float,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_77;
+CREATE TABLE table_77(
+                col_0 int,
+col_1 int
+            );
+        DROP TABLE IF EXISTS table_78;
+CREATE TABLE table_78(
+                col_0 int,
+col_1 text,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_79;
+CREATE TABLE table_79(
+                col_0 int
+            );
+        DROP TABLE IF EXISTS table_80;
+CREATE TABLE table_80(
+                col_0 float,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_81;
+CREATE TABLE table_81(
+                col_0 int,
+col_1 float,
+col_2 float
+            );
+        DROP TABLE IF EXISTS table_82;
+CREATE TABLE table_82(
+                col_0 float,
+col_1 int,
+col_2 int
+            );
+        DROP TABLE IF EXISTS table_83;
+CREATE TABLE table_83(
+                col_0 int,
+col_1 text
+            );
+        DROP TABLE IF EXISTS table_84;
+CREATE TABLE table_84(
+                col_0 int,
+col_1 int
+            );
+        CREATE INDEX ON table_49 (col_0);CREATE INDEX ON table_43 (col_0);CREATE INDEX ON table_63 (col_1);CREATE INDEX ON table_4 (col_0);CREATE INDEX ON table_77 (col_0);CREATE INDEX ON table_71 (col_0);CREATE INDEX ON table_52 (col_1);CREATE INDEX ON table_83 (col_1);CREATE INDEX ON table_75 (col_0);CREATE INDEX ON table_58 (col_0);CREATE INDEX ON table_23 (col_0);CREATE INDEX ON table_53 (col_0);CREATE INDEX ON table_41 (col_2);CREATE INDEX ON table_0 (col_1);CREATE INDEX ON table_56 (col_1);CREATE INDEX ON table_80 (col_2);CREATE INDEX ON table_13 (col_1);CREATE INDEX ON table_50 (col_0);CREATE INDEX ON table_6 (col_0);CREATE INDEX ON table_8 (col_1);CREATE INDEX ON table_28 (col_0);CREATE INDEX ON table_2 (col_0);CREATE INDEX ON table_69 (col_2);CREATE INDEX ON table_25 (col_1);CREATE INDEX ON table_15 (col_0);ANALYZE;

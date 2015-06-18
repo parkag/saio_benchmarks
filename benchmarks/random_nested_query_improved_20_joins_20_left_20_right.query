@@ -1,0 +1,29 @@
+EXPLAIN (FORMAT JSON) 
+SELECT table_0.col_0, table_0.col_3, table_26.col_2, table_40.col_0, table_53.col_2, table_27.col_4, table_53.col_3, table_27.col_1, table_5.col_0, table_43.col_1, table_54.col_0, table_40.col_1, table_17.col_0, table_40.col_1, table_27.col_2, table_53.col_3, table_31.col_0, table_17.col_2, table_42.col_1, table_31.col_0, table_18.col_2 FROM  table_0  JOIN table_29 ON table_0.col_2 = table_29.col_1
+ JOIN table_13 ON table_29.col_1 = table_13.col_0
+ JOIN table_55 ON table_29.col_3 = table_55.col_3
+ JOIN table_32 ON table_55.col_1 = table_32.col_3
+ JOIN table_27 ON table_13.col_3 = table_27.col_3
+ JOIN table_5 ON table_0.col_2 = table_5.col_3
+ LEFT JOIN table_8 ON table_32.col_3 = table_8.col_1
+ LEFT JOIN table_23 ON table_5.col_1 = table_23.col_2
+ LEFT JOIN table_18 ON table_13.col_1 = table_18.col_4
+ LEFT JOIN table_54 ON table_8.col_0 = table_54.col_0
+ LEFT JOIN table_31 ON table_0.col_2 = table_31.col_1
+ LEFT JOIN table_17 ON table_23.col_2 = table_17.col_1
+ RIGHT JOIN table_53 ON table_31.col_2 = table_53.col_1
+ RIGHT JOIN table_26 ON table_8.col_0 = table_26.col_1
+ RIGHT JOIN table_20 ON table_26.col_3 = table_20.col_0
+ RIGHT JOIN table_60 ON table_31.col_0 = table_60.col_2
+ RIGHT JOIN table_43 ON table_13.col_1 = table_43.col_1
+ RIGHT JOIN table_40 ON table_43.col_1 = table_40.col_1
+ RIGHT JOIN (SELECT * FROM  table_0  JOIN table_16 ON table_0.col_0 = table_16.col_3
+ JOIN table_49 ON table_16.col_2 = table_49.col_1
+ LEFT JOIN table_46 ON table_16.col_3 = table_46.col_3
+ RIGHT JOIN table_59 ON table_0.col_2 = table_59.col_1
+
+        ) AS subquery_table_0_586 
+                    ON TRUE
+ RIGHT JOIN table_42 ON table_20.col_0 = table_42.col_1
+
+        ;

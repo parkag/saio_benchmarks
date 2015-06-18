@@ -1,0 +1,289 @@
+--
+DROP SCHEMA IF EXISTS test_view CASCADE;
+
+            CREATE SCHEMA test_view;
+
+            SET SEARCH_PATH = test_view, test_data;
+DROP TABLE IF EXISTS table_0;
+CREATE TABLE table_0(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text
+            );
+        DROP TABLE IF EXISTS table_1;
+CREATE TABLE table_1(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text
+            );
+        DROP TABLE IF EXISTS table_2;
+CREATE TABLE table_2(
+                col_0 text,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_3;
+CREATE TABLE table_3(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text
+            );
+        DROP TABLE IF EXISTS table_4;
+CREATE TABLE table_4(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text,
+col_11 text
+            );
+        DROP TABLE IF EXISTS table_5;
+CREATE TABLE table_5(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text
+            );
+        DROP TABLE IF EXISTS table_6;
+CREATE TABLE table_6(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text
+            );
+        DROP TABLE IF EXISTS table_7;
+CREATE TABLE table_7(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text,
+col_11 text
+            );
+        DROP TABLE IF EXISTS table_8;
+CREATE TABLE table_8(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text
+            );
+        DROP TABLE IF EXISTS table_9;
+CREATE TABLE table_9(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text
+            );
+        DROP TABLE IF EXISTS table_10;
+CREATE TABLE table_10(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text
+            );
+        DROP TABLE IF EXISTS table_11;
+CREATE TABLE table_11(
+                col_0 text,
+col_1 text,
+col_2 text
+            );
+        DROP TABLE IF EXISTS table_12;
+CREATE TABLE table_12(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text
+            );
+        DROP TABLE IF EXISTS table_13;
+CREATE TABLE table_13(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text
+            );
+        DROP TABLE IF EXISTS table_14;
+CREATE TABLE table_14(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text
+            );
+        DROP TABLE IF EXISTS table_15;
+CREATE TABLE table_15(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text
+            );
+        DROP TABLE IF EXISTS table_16;
+CREATE TABLE table_16(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text,
+col_11 text
+            );
+        DROP TABLE IF EXISTS table_17;
+CREATE TABLE table_17(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text
+            );
+        DROP TABLE IF EXISTS table_18;
+CREATE TABLE table_18(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text,
+col_11 text
+            );
+        DROP TABLE IF EXISTS table_19;
+CREATE TABLE table_19(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text
+            );
+        DROP TABLE IF EXISTS table_20;
+CREATE TABLE table_20(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text
+            );
+        DROP TABLE IF EXISTS table_21;
+CREATE TABLE table_21(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text,
+col_10 text,
+col_11 text
+            );
+        DROP TABLE IF EXISTS table_22;
+CREATE TABLE table_22(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text
+            );
+        DROP TABLE IF EXISTS table_23;
+CREATE TABLE table_23(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text
+            );
+        DROP TABLE IF EXISTS table_24;
+CREATE TABLE table_24(
+                col_0 text,
+col_1 text,
+col_2 text,
+col_3 text,
+col_4 text,
+col_5 text,
+col_6 text,
+col_7 text,
+col_8 text,
+col_9 text
+            );
+        

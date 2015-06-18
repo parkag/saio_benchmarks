@@ -1,0 +1,68 @@
+EXPLAIN (FORMAT JSON) 
+SELECT table_0.col_0, table_9.col_0, table_8.col_1, table_48.col_2, table_53.col_0, table_11.col_4, table_39.col_1, table_53.col_2, table_22.col_0, table_59.col_3, table_55.col_1, table_56.col_3, table_39.col_3, table_7.col_0, table_13.col_0, table_34.col_1, table_18.col_0, table_59.col_1, table_19.col_0, table_15.col_0, table_55.col_0 FROM  table_0  JOIN table_48 ON table_0.col_1 = table_48.col_0
+ JOIN table_13 ON table_48.col_0 = table_13.col_2
+ JOIN table_39 ON table_13.col_0 = table_39.col_1
+ JOIN table_52 ON table_13.col_0 = table_52.col_1
+ JOIN table_23 ON table_52.col_2 = table_23.col_0
+ JOIN table_38 ON table_52.col_3 = table_38.col_0
+ JOIN table_8 ON table_23.col_1 = table_8.col_0
+ JOIN table_50 ON table_8.col_1 = table_50.col_0
+ JOIN (SELECT * FROM  table_0  JOIN table_47 ON table_0.col_1 = table_47.col_0
+ JOIN table_12 ON table_0.col_2 = table_12.col_0
+ LEFT JOIN table_48 ON table_0.col_0 = table_48.col_2
+ RIGHT JOIN table_10 ON table_0.col_0 = table_10.col_0
+
+        ) AS subquery_table_0_876 
+                    ON TRUE
+ JOIN table_7 ON table_50.col_4 = table_7.col_1
+ JOIN table_51 ON table_23.col_1 = table_51.col_1
+ JOIN table_55 ON table_8.col_0 = table_55.col_0
+ JOIN table_59 ON table_0.col_0 = table_59.col_3
+ LEFT JOIN table_41 ON table_48.col_0 = table_41.col_0
+ LEFT JOIN table_33 ON table_48.col_1 = table_33.col_0
+ LEFT JOIN (SELECT * FROM  table_0  JOIN table_27 ON table_0.col_1 = table_27.col_0
+ JOIN table_51 ON table_0.col_1 = table_51.col_2
+ LEFT JOIN table_19 ON table_27.col_0 = table_19.col_0
+ RIGHT JOIN table_17 ON table_0.col_0 = table_17.col_4
+
+        ) AS subquery_table_0_378 
+                    ON TRUE
+ LEFT JOIN (SELECT * FROM  table_0  JOIN table_46 ON table_0.col_2 = table_46.col_0
+ JOIN table_36 ON table_0.col_2 = table_36.col_1
+ LEFT JOIN table_45 ON table_46.col_1 = table_45.col_2
+ RIGHT JOIN table_53 ON table_0.col_2 = table_53.col_0
+
+        ) AS subquery_table_0_929 
+                    ON TRUE
+ LEFT JOIN table_11 ON table_7.col_0 = table_11.col_1
+ LEFT JOIN table_40 ON table_13.col_1 = table_40.col_2
+ LEFT JOIN table_34 ON table_50.col_3 = table_34.col_0
+ LEFT JOIN table_36 ON table_59.col_0 = table_36.col_2
+ LEFT JOIN table_3 ON table_36.col_1 = table_3.col_2
+ LEFT JOIN table_22 ON table_8.col_0 = table_22.col_0
+ LEFT JOIN table_18 ON table_7.col_0 = table_18.col_1
+ LEFT JOIN table_6 ON table_38.col_0 = table_6.col_0
+ LEFT JOIN table_19 ON table_34.col_0 = table_19.col_1
+ LEFT JOIN table_30 ON table_11.col_1 = table_30.col_1
+ RIGHT JOIN table_20 ON table_40.col_0 = table_20.col_1
+ RIGHT JOIN table_53 ON table_22.col_0 = table_53.col_0
+ RIGHT JOIN table_21 ON table_22.col_0 = table_21.col_2
+ RIGHT JOIN table_15 ON table_40.col_2 = table_15.col_1
+ RIGHT JOIN (SELECT * FROM  table_0  JOIN table_58 ON table_0.col_2 = table_58.col_1
+ JOIN table_6 ON table_0.col_0 = table_6.col_0
+ LEFT JOIN table_1 ON table_58.col_1 = table_1.col_1
+ RIGHT JOIN table_22 ON table_1.col_1 = table_22.col_1
+
+        ) AS subquery_table_0_54 
+                    ON TRUE
+ RIGHT JOIN table_9 ON table_52.col_1 = table_9.col_1
+ RIGHT JOIN table_56 ON table_7.col_1 = table_56.col_2
+ RIGHT JOIN (SELECT * FROM  table_0  JOIN table_25 ON table_0.col_0 = table_25.col_1
+ JOIN table_11 ON table_0.col_2 = table_11.col_1
+ LEFT JOIN table_50 ON table_11.col_3 = table_50.col_1
+ RIGHT JOIN table_51 ON table_0.col_0 = table_51.col_3
+
+        ) AS subquery_table_0_609 
+                    ON TRUE
+
+        ;

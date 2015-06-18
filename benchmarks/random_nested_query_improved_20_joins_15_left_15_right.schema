@@ -1,0 +1,415 @@
+--
+DROP SCHEMA IF EXISTS test_view CASCADE;
+
+            CREATE SCHEMA test_view;
+
+            SET SEARCH_PATH = test_view, test_data;
+DROP TABLE IF EXISTS table_0;
+CREATE TABLE table_0(
+                col_0 float8,
+col_1 boolean,
+col_2 float8,
+col_3 varchar
+            );
+        DROP TABLE IF EXISTS table_1;
+CREATE TABLE table_1(
+                col_0 float8,
+col_1 float8,
+col_2 varchar,
+col_3 boolean,
+col_4 bigint
+            );
+        DROP TABLE IF EXISTS table_2;
+CREATE TABLE table_2(
+                col_0 float8,
+col_1 boolean,
+col_2 varchar,
+col_3 bigint
+            );
+        DROP TABLE IF EXISTS table_3;
+CREATE TABLE table_3(
+                col_0 bigint,
+col_1 boolean,
+col_2 boolean
+            );
+        DROP TABLE IF EXISTS table_4;
+CREATE TABLE table_4(
+                col_0 boolean,
+col_1 int4,
+col_2 varchar,
+col_3 bigint
+            );
+        DROP TABLE IF EXISTS table_5;
+CREATE TABLE table_5(
+                col_0 float8,
+col_1 float8,
+col_2 bigint,
+col_3 bigint
+            );
+        DROP TABLE IF EXISTS table_6;
+CREATE TABLE table_6(
+                col_0 int4,
+col_1 varchar,
+col_2 varchar
+            );
+        DROP TABLE IF EXISTS table_7;
+CREATE TABLE table_7(
+                col_0 int4,
+col_1 int4
+            );
+        DROP TABLE IF EXISTS table_8;
+CREATE TABLE table_8(
+                col_0 int4,
+col_1 bigint
+            );
+        DROP TABLE IF EXISTS table_9;
+CREATE TABLE table_9(
+                col_0 int4,
+col_1 boolean,
+col_2 int4
+            );
+        DROP TABLE IF EXISTS table_10;
+CREATE TABLE table_10(
+                col_0 bigint,
+col_1 float8
+            );
+        DROP TABLE IF EXISTS table_11;
+CREATE TABLE table_11(
+                col_0 bigint,
+col_1 float8,
+col_2 bigint
+            );
+        DROP TABLE IF EXISTS table_12;
+CREATE TABLE table_12(
+                col_0 float8,
+col_1 float8,
+col_2 bigint,
+col_3 varchar
+            );
+        DROP TABLE IF EXISTS table_13;
+CREATE TABLE table_13(
+                col_0 float8,
+col_1 int4
+            );
+        DROP TABLE IF EXISTS table_14;
+CREATE TABLE table_14(
+                col_0 float8,
+col_1 varchar,
+col_2 varchar,
+col_3 int4,
+col_4 int4
+            );
+        DROP TABLE IF EXISTS table_15;
+CREATE TABLE table_15(
+                col_0 int4,
+col_1 varchar
+            );
+        DROP TABLE IF EXISTS table_16;
+CREATE TABLE table_16(
+                col_0 boolean,
+col_1 boolean,
+col_2 int4,
+col_3 boolean
+            );
+        DROP TABLE IF EXISTS table_17;
+CREATE TABLE table_17(
+                col_0 boolean,
+col_1 int4,
+col_2 varchar
+            );
+        DROP TABLE IF EXISTS table_18;
+CREATE TABLE table_18(
+                col_0 varchar,
+col_1 boolean,
+col_2 boolean,
+col_3 boolean
+            );
+        DROP TABLE IF EXISTS table_19;
+CREATE TABLE table_19(
+                col_0 bigint,
+col_1 boolean,
+col_2 varchar,
+col_3 float8
+            );
+        DROP TABLE IF EXISTS table_20;
+CREATE TABLE table_20(
+                col_0 float8,
+col_1 int4,
+col_2 varchar
+            );
+        DROP TABLE IF EXISTS table_21;
+CREATE TABLE table_21(
+                col_0 bigint,
+col_1 boolean,
+col_2 varchar
+            );
+        DROP TABLE IF EXISTS table_22;
+CREATE TABLE table_22(
+                col_0 bigint,
+col_1 float8,
+col_2 bigint
+            );
+        DROP TABLE IF EXISTS table_23;
+CREATE TABLE table_23(
+                col_0 varchar,
+col_1 bigint,
+col_2 int4
+            );
+        DROP TABLE IF EXISTS table_24;
+CREATE TABLE table_24(
+                col_0 float8,
+col_1 varchar,
+col_2 bigint,
+col_3 varchar,
+col_4 bigint
+            );
+        DROP TABLE IF EXISTS table_25;
+CREATE TABLE table_25(
+                col_0 int4,
+col_1 bigint,
+col_2 boolean
+            );
+        DROP TABLE IF EXISTS table_26;
+CREATE TABLE table_26(
+                col_0 int4,
+col_1 varchar
+            );
+        DROP TABLE IF EXISTS table_27;
+CREATE TABLE table_27(
+                col_0 bigint,
+col_1 bigint,
+col_2 bigint,
+col_3 float8,
+col_4 int4
+            );
+        DROP TABLE IF EXISTS table_28;
+CREATE TABLE table_28(
+                col_0 varchar,
+col_1 boolean,
+col_2 varchar
+            );
+        DROP TABLE IF EXISTS table_29;
+CREATE TABLE table_29(
+                col_0 boolean,
+col_1 boolean,
+col_2 boolean,
+col_3 boolean,
+col_4 varchar
+            );
+        DROP TABLE IF EXISTS table_30;
+CREATE TABLE table_30(
+                col_0 bigint,
+col_1 bigint,
+col_2 int4,
+col_3 varchar
+            );
+        DROP TABLE IF EXISTS table_31;
+CREATE TABLE table_31(
+                col_0 float8,
+col_1 varchar,
+col_2 int4,
+col_3 varchar
+            );
+        DROP TABLE IF EXISTS table_32;
+CREATE TABLE table_32(
+                col_0 bigint,
+col_1 boolean,
+col_2 bigint,
+col_3 bigint,
+col_4 varchar
+            );
+        DROP TABLE IF EXISTS table_33;
+CREATE TABLE table_33(
+                col_0 varchar,
+col_1 boolean
+            );
+        DROP TABLE IF EXISTS table_34;
+CREATE TABLE table_34(
+                col_0 float8,
+col_1 int4,
+col_2 float8,
+col_3 boolean,
+col_4 float8
+            );
+        DROP TABLE IF EXISTS table_35;
+CREATE TABLE table_35(
+                col_0 varchar,
+col_1 bigint,
+col_2 varchar,
+col_3 bigint,
+col_4 bigint
+            );
+        DROP TABLE IF EXISTS table_36;
+CREATE TABLE table_36(
+                col_0 float8,
+col_1 int4
+            );
+        DROP TABLE IF EXISTS table_37;
+CREATE TABLE table_37(
+                col_0 bigint,
+col_1 float8
+            );
+        DROP TABLE IF EXISTS table_38;
+CREATE TABLE table_38(
+                col_0 float8,
+col_1 bigint,
+col_2 boolean,
+col_3 boolean,
+col_4 int4
+            );
+        DROP TABLE IF EXISTS table_39;
+CREATE TABLE table_39(
+                col_0 varchar,
+col_1 varchar
+            );
+        DROP TABLE IF EXISTS table_40;
+CREATE TABLE table_40(
+                col_0 boolean,
+col_1 float8
+            );
+        DROP TABLE IF EXISTS table_41;
+CREATE TABLE table_41(
+                col_0 varchar,
+col_1 varchar
+            );
+        DROP TABLE IF EXISTS table_42;
+CREATE TABLE table_42(
+                col_0 boolean,
+col_1 varchar,
+col_2 varchar,
+col_3 boolean,
+col_4 varchar
+            );
+        DROP TABLE IF EXISTS table_43;
+CREATE TABLE table_43(
+                col_0 boolean,
+col_1 bigint
+            );
+        DROP TABLE IF EXISTS table_44;
+CREATE TABLE table_44(
+                col_0 boolean,
+col_1 boolean,
+col_2 varchar,
+col_3 boolean
+            );
+        DROP TABLE IF EXISTS table_45;
+CREATE TABLE table_45(
+                col_0 float8,
+col_1 boolean,
+col_2 boolean
+            );
+        DROP TABLE IF EXISTS table_46;
+CREATE TABLE table_46(
+                col_0 varchar,
+col_1 boolean,
+col_2 float8
+            );
+        DROP TABLE IF EXISTS table_47;
+CREATE TABLE table_47(
+                col_0 int4,
+col_1 float8,
+col_2 varchar,
+col_3 int4,
+col_4 int4
+            );
+        DROP TABLE IF EXISTS table_48;
+CREATE TABLE table_48(
+                col_0 boolean,
+col_1 float8,
+col_2 boolean,
+col_3 int4,
+col_4 bigint
+            );
+        DROP TABLE IF EXISTS table_49;
+CREATE TABLE table_49(
+                col_0 int4,
+col_1 varchar,
+col_2 boolean,
+col_3 boolean
+            );
+        DROP TABLE IF EXISTS table_50;
+CREATE TABLE table_50(
+                col_0 float8,
+col_1 varchar
+            );
+        DROP TABLE IF EXISTS table_51;
+CREATE TABLE table_51(
+                col_0 varchar,
+col_1 varchar,
+col_2 int4,
+col_3 boolean,
+col_4 varchar
+            );
+        DROP TABLE IF EXISTS table_52;
+CREATE TABLE table_52(
+                col_0 boolean,
+col_1 bigint,
+col_2 float8,
+col_3 int4
+            );
+        DROP TABLE IF EXISTS table_53;
+CREATE TABLE table_53(
+                col_0 boolean,
+col_1 boolean
+            );
+        DROP TABLE IF EXISTS table_54;
+CREATE TABLE table_54(
+                col_0 boolean,
+col_1 int4,
+col_2 boolean,
+col_3 varchar,
+col_4 varchar
+            );
+        DROP TABLE IF EXISTS table_55;
+CREATE TABLE table_55(
+                col_0 int4,
+col_1 float8
+            );
+        DROP TABLE IF EXISTS table_56;
+CREATE TABLE table_56(
+                col_0 float8,
+col_1 bigint,
+col_2 bigint,
+col_3 bigint,
+col_4 bigint
+            );
+        DROP TABLE IF EXISTS table_57;
+CREATE TABLE table_57(
+                col_0 int4,
+col_1 float8,
+col_2 int4,
+col_3 varchar
+            );
+        DROP TABLE IF EXISTS table_58;
+CREATE TABLE table_58(
+                col_0 int4,
+col_1 bigint
+            );
+        DROP TABLE IF EXISTS table_59;
+CREATE TABLE table_59(
+                col_0 int4,
+col_1 bigint,
+col_2 bigint,
+col_3 int4
+            );
+        CREATE INDEX ON table_22 (col_1);
+CREATE INDEX ON table_17 (col_0);
+CREATE INDEX ON table_36 (col_0);
+CREATE INDEX ON table_51 (col_0);
+CREATE INDEX ON table_41 (col_1);
+CREATE INDEX ON table_21 (col_0);
+CREATE INDEX ON table_26 (col_0);
+CREATE INDEX ON table_42 (col_1);
+CREATE INDEX ON table_30 (col_2);
+CREATE INDEX ON table_40 (col_1);
+CREATE INDEX ON table_2 (col_3);
+CREATE INDEX ON table_3 (col_1);
+CREATE INDEX ON table_25 (col_1);
+CREATE INDEX ON table_54 (col_0);
+CREATE INDEX ON table_47 (col_1);
+CREATE INDEX ON table_49 (col_0);
+CREATE INDEX ON table_56 (col_3);
+CREATE INDEX ON table_32 (col_2);
+CREATE INDEX ON table_20 (col_0);
+CREATE INDEX ON table_13 (col_0);
+ANALYZE;

@@ -1,0 +1,93 @@
+EXPLAIN (FORMAT JSON) 
+SELECT * FROM  table_0  JOIN(SELECT table_43.col_0, COUNT(*) from table_43 
+                JOIN table_0 on table_0.col_1 = table_43.col_0) AS subquery_29_86
+                ON TRUE
+ JOIN(SELECT table_42.col_1, COUNT(*) from table_42 
+                JOIN table_43 on table_43.col_0 = table_42.col_1) AS subquery_10_81
+                ON TRUE
+ JOIN(SELECT table_33.col_1, COUNT(*) from table_33 
+                JOIN table_0 on table_0.col_2 = table_33.col_1) AS subquery_46_10
+                ON TRUE
+ JOIN(SELECT table_38.col_2, COUNT(*) from table_38 
+                JOIN table_43 on table_43.col_2 = table_38.col_2) AS subquery_89_28
+                ON TRUE
+ JOIN(SELECT table_27.col_1, COUNT(*) from table_27 
+                JOIN table_0 on table_0.col_4 = table_27.col_1) AS subquery_21_81
+                ON TRUE
+ JOIN(SELECT table_18.col_3, COUNT(*) from table_18 
+                JOIN table_38 on table_38.col_3 = table_18.col_3) AS subquery_79_71
+                ON TRUE
+ JOIN(SELECT table_17.col_1, COUNT(*) from table_17 
+                JOIN table_42 on table_42.col_2 = table_17.col_1) AS subquery_40_7
+                ON TRUE
+ JOIN(SELECT table_16.col_2, COUNT(*) from table_16 
+                JOIN table_0 on table_0.col_1 = table_16.col_2) AS subquery_54_61
+                ON TRUE
+ JOIN(SELECT table_14.col_0, COUNT(*) from table_14 
+                JOIN table_18 on table_18.col_0 = table_14.col_0) AS subquery_45_98
+                ON TRUE
+ JOIN(SELECT table_26.col_1, COUNT(*) from table_26 
+                JOIN table_17 on table_17.col_0 = table_26.col_1) AS subquery_53_50
+                ON TRUE
+ JOIN(SELECT table_37.col_3, COUNT(*) from table_37 
+                JOIN table_17 on table_17.col_1 = table_37.col_3) AS subquery_79_19
+                ON TRUE
+ JOIN(SELECT table_44.col_0, COUNT(*) from table_44 
+                JOIN table_14 on table_14.col_1 = table_44.col_0) AS subquery_78_38
+                ON TRUE
+ JOIN(SELECT table_29.col_2, COUNT(*) from table_29 
+                JOIN table_17 on table_17.col_1 = table_29.col_2) AS subquery_80_11
+                ON TRUE
+ JOIN(SELECT table_2.col_1, COUNT(*) from table_2 
+                JOIN table_18 on table_18.col_4 = table_2.col_1) AS subquery_40_4
+                ON TRUE
+ JOIN(SELECT table_5.col_1, COUNT(*) from table_5 
+                JOIN table_18 on table_18.col_0 = table_5.col_1) AS subquery_62_68
+                ON TRUE
+ JOIN(SELECT table_32.col_2, COUNT(*) from table_32 
+                JOIN table_26 on table_26.col_1 = table_32.col_2) AS subquery_65_66
+                ON TRUE
+ JOIN(SELECT table_4.col_0, COUNT(*) from table_4 
+                JOIN table_44 on table_44.col_2 = table_4.col_0) AS subquery_89_41
+                ON TRUE
+ JOIN(SELECT table_21.col_4, COUNT(*) from table_21 
+                JOIN table_17 on table_17.col_0 = table_21.col_4) AS subquery_8_60
+                ON TRUE
+ JOIN(SELECT table_40.col_0, COUNT(*) from table_40 
+                JOIN table_0 on table_0.col_4 = table_40.col_0) AS subquery_25_32
+                ON TRUE
+ JOIN(SELECT table_6.col_3, COUNT(*) from table_6 
+                JOIN table_21 on table_21.col_0 = table_6.col_3) AS subquery_60_16
+                ON TRUE
+ LEFT JOIN(SELECT table_3.col_0, COUNT(*) from table_3 
+                JOIN table_21 on table_21.col_2 = table_3.col_0) AS subquery_93_92
+                ON TRUE
+ LEFT JOIN(SELECT table_41.col_2, COUNT(*) from table_41 
+                JOIN table_17 on table_17.col_0 = table_41.col_2) AS subquery_50_14
+                ON TRUE
+ LEFT JOIN(SELECT table_25.col_2, COUNT(*) from table_25 
+                JOIN table_3 on table_3.col_1 = table_25.col_2) AS subquery_83_32
+                ON TRUE
+ LEFT JOIN(SELECT table_30.col_2, COUNT(*) from table_30 
+                JOIN table_41 on table_41.col_0 = table_30.col_2) AS subquery_55_92
+                ON TRUE
+ LEFT JOIN(SELECT table_11.col_3, COUNT(*) from table_11 
+                JOIN table_2 on table_2.col_0 = table_11.col_3) AS subquery_12_48
+                ON TRUE
+ RIGHT JOIN(SELECT table_28.col_0, COUNT(*) from table_28 
+                JOIN table_41 on table_41.col_2 = table_28.col_0) AS subquery_9_20
+                ON TRUE
+ RIGHT JOIN(SELECT table_9.col_0, COUNT(*) from table_9 
+                JOIN table_0 on table_0.col_0 = table_9.col_0) AS subquery_92_54
+                ON TRUE
+ RIGHT JOIN(SELECT table_31.col_2, COUNT(*) from table_31 
+                JOIN table_3 on table_3.col_0 = table_31.col_2) AS subquery_48_44
+                ON TRUE
+ RIGHT JOIN(SELECT table_34.col_1, COUNT(*) from table_34 
+                JOIN table_14 on table_14.col_3 = table_34.col_1) AS subquery_98_11
+                ON TRUE
+ RIGHT JOIN(SELECT table_8.col_0, COUNT(*) from table_8 
+                JOIN table_30 on table_30.col_1 = table_8.col_0) AS subquery_23_49
+                ON TRUE
+
+        ;

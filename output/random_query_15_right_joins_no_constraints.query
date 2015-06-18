@@ -1,0 +1,18 @@
+ANALYZE;
+        EXPLAIN (FORMAT JSON)SELECT * FROM  table_0  RIGHT JOIN table_6 ON table_0.col_2 = table_6.col_0
+ RIGHT JOIN table_14 ON table_6.col_2 = table_14.col_2
+ RIGHT JOIN table_17 ON table_0.col_7 = table_17.col_4
+ RIGHT JOIN table_12 ON table_0.col_5 = table_12.col_3
+ RIGHT JOIN table_7 ON table_12.col_0 = table_7.col_6
+ RIGHT JOIN table_15 ON table_17.col_3 = table_15.col_1
+ RIGHT JOIN table_1 ON table_0.col_3 = table_1.col_0
+ RIGHT JOIN table_16 ON table_14.col_0 = table_16.col_2
+ RIGHT JOIN table_2 ON table_12.col_1 = table_2.col_9
+ RIGHT JOIN table_13 ON table_17.col_0 = table_13.col_9
+ RIGHT JOIN table_9 ON table_12.col_3 = table_9.col_5
+ RIGHT JOIN table_8 ON table_2.col_4 = table_8.col_4
+ RIGHT JOIN table_18 ON table_17.col_3 = table_18.col_10
+ RIGHT JOIN table_10 ON table_18.col_0 = table_10.col_4
+ RIGHT JOIN table_11 ON table_12.col_1 = table_11.col_0
+
+        ;
