@@ -1,0 +1,107 @@
+#!/usr/bin/env python
+
+# Copyright (c) 2012 Peter Eisentraut
+# See LICENSE file for conditions.
+
+"""VEUNG -- visual explain uber-next generation -- converts a
+PostgreSQL explain output in JSON format into a graph and optionally
+displays it.  The input is accepted on standard input or from a file
+named as argument.  Without arguments, it displays the graph using
+dotty.  A typical use would be to call it from within psql like
+
+\\a\\t
+EXPLAIN (FORMAT JSON) SELECT ... \\g |veung
+"""
+
+DESCRIPTION = __doc__
+
+import optparse
+import pygraphviz
+import subprocess
+import sys
+import tempfile
+
+try:
+    import json
+except ImportError:
+    import simplejson as json
+
+
+def save_to_file(in_fname, out_fname):
+    with open(in_fname) as infile:
+        data = json.loads(infile.read())
+    
+    if isinstance(data, list):
+        # SQL explain
+        plan = data[0]['Plan']
+    else:
+        # auto_explain
+        plan = data['Plan']
+
+    graph = pygraphviz.AGraph(directed=True, name='Plan', ordering='out')
+    tree_walker(graph, plan)
+
+    with open(out_fname, 'w') as outf:
+        outf.write(graph.to_string())
+
+
+def main():
+    """Main function"""
+    optparser = optparse.OptionParser(description = DESCRIPTION)
+    optparser.add_option('-o', '--output', dest = 'output', metavar='FILE',
+                         help = 'write output to FILE, - for standard output')
+    (options, args) = optparser.parse_args()
+
+    if len(args) > 0:
+        infile = open(args[0])
+    else:
+        infile = sys.stdin
+    data = json.loads(infile.read())
+    if isinstance(data, list):
+        # SQL explain
+        plan = data[0]['Plan']
+    else:
+        # auto_explain
+        plan = data['Plan']
+
+    graph = pygraphviz.AGraph(directed = True, name = 'Plan', ordering = 'out')
+    tree_walker(graph, plan)
+
+    if options.output:
+        if options.output == '-':
+            print(graph.to_string())
+        else:
+            outf = open(options.output, 'w')
+            outf.write(graph.to_string())
+            outf.close()
+    else:
+        tmpf = tempfile.NamedTemporaryFile(prefix = 'veung', suffix = '.dot')
+        tmpf.write(graph.to_string())
+        tmpf.flush()
+        subprocess.check_call(['dotty', tmpf.name])
+        tmpf.close()
+
+
+def tree_walker(graph, plan, node_name = None, penwidth_ratio = None):
+    """Takes subtree represented by plan and add necessary nodes and
+    edges to graph."""
+    if penwidth_ratio is None:
+        penwidth_ratio = 30 / max(plan['Total Cost'], 0.01)
+    if node_name is None:
+        node_name = 'node_0'
+    node_label = plan['Node Type']
+    for field in ['Relation Name', 'Index Name', 'Total Cost']:
+        if field in plan:
+            node_label += '\\n%s: %s' % (field, plan[field])
+    graph.add_node(node_name, label = node_label, shape = 'box')
+    if 'Plans' in plan:
+        for i, subplan in enumerate(plan['Plans']):
+            child_node_name = '%s_%d' % (node_name, i)
+            tree_walker(graph, subplan, child_node_name, penwidth_ratio)
+            graph.add_edge(node_name, child_node_name,
+                           penwidth=str(subplan['Total Cost'] * penwidth_ratio),
+                           label=subplan.get('Parent Relationship'))
+
+
+if __name__ == '__main__':
+    main()
