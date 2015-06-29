@@ -265,7 +265,7 @@ class NestedQueryImproved(RandomQuery):
         return sql 
 
 
-class RandomDoubleNestedQuery(object):
+class FixedDoubleNestedQuery(object):
 
     def sql(self):
         sql = """SELECT * FROM table_1
@@ -300,6 +300,86 @@ class RandomDoubleNestedQuery(object):
         RIGHT JOIN table_22 ON table_22.col_1 = table_1.col_1
         LEFT JOIN table_23 ON table_23.col_2 = table_22.col_1
         """
+        return sql
+
+    def explain_sql(self):
+        sql = """EXPLAIN (FORMAT JSON) \n""" + self.sql() + ";"
+        return sql
+
+
+class RegularNestedQuery(RandomQuery):
+
+    def __init__(self, schema, joins, left_joins, right_joins, subqueries, join_type):
+        # [left, right] joins per subquery
+        self.schema = schema
+        self.joins = joins
+        self.left_joins = left_joins
+        self.right_joins = right_joins
+        self.subqueries = subqueries
+        self.join_type = join_type
+        self.already_joined = []
+
+    def _get_from_section(self):
+        from_section = ' {tab_name} '.format(
+            tab_name=self.schema.tables[0].name
+        )
+        
+        self.already_joined.append(self.schema.tables[0])
+        
+        self.current_table = 1
+        
+        for i in xrange(self.subqueries):
+            from_section += """{join_type}({subquery}) 
+                AS {subquery_name} ON TRUE\n""".format(
+                join_type=self.join_type,
+                subquery=self._get_subquery(),
+                subquery_name="subquery_"+str(i))
+
+        return from_section
+
+    def _get_subquery(self):
+        subjoin_part = ''
+        tab1 = self.schema.tables[self.current_table].name
+        self.current_table += 1
+
+        for i in xrange(self.joins):
+            subjoin_part += self._get_join_part("JOIN")
+        for i in xrange(self.left_joins):
+            subjoin_part += self._get_join_part("LEFT JOIN")
+        for i in xrange(self.right_joins):
+            subjoin_part += self._get_join_part("RIGHT JOIN")
+
+        subquery = """SELECT * FROM {first_tab}
+            {subjoin_part}
+        """.format(
+            first_tab=tab1,
+            subjoin_part=subjoin_part)
+        return subquery
+    
+
+    def _get_join_part(self, join_type):
+        n_tables = len(self.schema.tables)
+        table1 = self.schema.tables[self.current_table-1]
+        table2 = self.schema.tables[self.current_table]
+
+        col1 = random.choice(table1.columns)
+        col2 = random.choice(table2.columns)
+
+        join_part = " {join_type} {tab} ON {boolean_expression}\n".format(
+            join_type=join_type,
+            tab=table2.name,
+            boolean_expression=self._get_boolean_expression(
+                table1, table2, col1, col2)
+        )
+        self.current_table += 1
+        return join_part
+
+    def sql(self):
+        sql = """SELECT {what_section} FROM {from_section}
+        """.format(
+            from_section=self._get_from_section(),
+            what_section="*",
+        )
         return sql
 
     def explain_sql(self):
